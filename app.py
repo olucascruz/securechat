@@ -55,7 +55,7 @@ def handle_disconnect():
 
 @app.route("/login", methods=['POST'])
 def login():
-    data = request.json
+    data_request = request.json
     with open(path_db, 'r') as file:
         db = json.load(file)
 
@@ -63,8 +63,8 @@ def login():
         db_token = json.load(file)
     
     for id in db:
-        user_is_in_db = (db[id]["username"] == data["username"] and
-                     db[id]["password"] == data["password"])
+        user_is_in_db = (db[id]["username"] == data_request["username"] and
+                     db[id]["password"] == data_request["password"])
         
         if user_is_in_db:
             token = generate_unique_id(db.keys())
@@ -74,7 +74,7 @@ def login():
                 json.dump(db_token, file, indent=2)
 
             db[id]["is_online"] = True
-            db[id]["public_key"] = data["public_key"]
+            db[id]["public_key"] = data_request["public_key"]
             with open(path_db, 'w') as file:
                 json.dump(db, file, indent=2)
             print(db_token[db[id]["username"]])
@@ -95,30 +95,29 @@ def register():
     }"""
 
     # Retira o json da requisição, já o lendo como dict
-    data = request.json
-    print(data)
+    data_request = request.json
 
     data_expected = ["username", "password"]
 
     """ Verifica se foi enviado os campos necessários"""
     for fields in data_expected:
-        if fields not in data.keys():
+        if fields not in data_request.keys():
             return Response(
             "Error: incorrect format",
             status=400)
     
     """ Verifica se os campos estão vazios"""
-    for key in data.keys():
-        if data[key] == "": 
+    for key in data_request.keys():
+        if data_request[key] == "": 
             return Response(
             "Error: empty value",
             status=400,)
         
     obj_db ={
-        "username":data["username"],
-        "password":data["password"],
+        "username":data_request["username"],
+        "password":data_request["password"],
         "is_online":False,
-        "public_key":data["public_key"]
+        "public_key":data_request["public_key"]
     }
     
 
@@ -127,11 +126,11 @@ def register():
         db = json.load(file)
     
     ###Verifica se o usuário já existe no banco###
-    # for data in db:
-    #     if db[data]["username"] == data["username"]:
-    #         return Response(
-    #         "Error: usúario já existe",
-    #         status=400,)
+    for db_data in db:
+        if db[db_data]["username"] == data_request["username"]:
+           return Response(
+            "Error: usúario já existe",
+            status=400,)
         
     # Cria a chave única para cada usuário
     user_id = generate_unique_id(db.keys())
@@ -157,12 +156,12 @@ def generate_unique_id(existing_ids):
 
 @app.route("/logout", methods=['POST'])
 def logout():
-    data = request.json
+    data_request = request.json
     with open(path_db, 'r') as file:
         db = json.load(file)
 
     for id in db:
-        if id == data["id"]:
+        if id == data_request["id"]:
             db[id]["is_online"] = False
             with open(path_db, 'w') as file:
                 json.dump(db, file, indent=2)
@@ -176,16 +175,16 @@ def getUsers():
 
 
 @socketio.on('message')
-def handle_message(data):
-    receiver = data["receiver"]
-    print(data)
-    emit(f"message-{receiver}", data, broadcast=True)
-    # emit(f"teste", data, broadcast=True)
+def handle_message(data_request):
+    receiver = data_request["receiver"]
+    print(data_request)
+    emit(f"message-{receiver}", data_request, broadcast=True)
+    # emit(f"teste", data_request, broadcast=True)
 
 @socketio.on('message_test')
-def handle_message(data):
-    print(data)
-    emit(f"teste", data, broadcast=True)
+def handle_message(data_request):
+    print(data_request)
+    emit(f"teste", data_request, broadcast=True)
 
 
 if __name__ == "__main__":
