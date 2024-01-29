@@ -159,6 +159,13 @@ def handle_message(data):
     receiver = data["receiver"]
     print(data)
     emit(f"message-{receiver}", data, broadcast=True)
+    # emit(f"teste", data, broadcast=True)
+
+@socketio.on('message_test')
+def handle_message(data):
+    print(data)
+    emit(f"teste", data, broadcast=True)
+
 
 if __name__ == "__main__":
     socketio.run(app,  debug=True)

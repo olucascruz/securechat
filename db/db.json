@@ -1,1 +1,14 @@
-{}
+{
+  "468e663d-397d-413d-a631-98f268f248ba": {
+    "username": "users",
+    "password": "senha",
+    "is_online": true,
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAET7CJMY7DOAIKKnz55LD9+187l4vh\nuvIk5ecoPOqbadWLnU7FHASEgBEEFRyL7m8VCHQLfMpvh4CPfz7y5OHL6Q==\n-----END PUBLIC KEY-----\n"
+  },
+  "76079d48-0dc1-43cd-9532-484d1417dc17": {
+    "username": "user2",
+    "password": "senha2",
+    "is_online": true,
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqoHIsjP3Mlu3bccnhiFfTN4QlBad\nvcVmDu4RxTh9c9HE1Kfs+Lw2+qGW2TV+6DUx50jfiE+ku1BHfy1AhucpOg==\n-----END PUBLIC KEY-----\n"
+  }
+}
