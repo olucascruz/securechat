@@ -10,5 +10,11 @@
     "password": "senha2",
     "is_online": true,
     "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqoHIsjP3Mlu3bccnhiFfTN4QlBad\nvcVmDu4RxTh9c9HE1Kfs+Lw2+qGW2TV+6DUx50jfiE+ku1BHfy1AhucpOg==\n-----END PUBLIC KEY-----\n"
+  },
+  "f5ef697e-3c99-440b-bfe7-a6fd76f08e78": {
+    "username": "julio",
+    "password": "fabior",
+    "is_online": false,
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEHGeKPL/F1t4iiKgUnTo8+b8sazJd\nEn3IlzDFbqFpaFzSDy9DZNSpORHcCSORJwdURjUKn6ogE2LV6OeWpRpbpA==\n-----END PUBLIC KEY-----\n"
   }
 }

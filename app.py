@@ -17,6 +17,7 @@ clients = 0
 folder_path = os.path.dirname(__file__)
 path_db = os.path.join(folder_path, r"db\db.json")
 path_db_token = os.path.join(folder_path, r"db\auth.json")
+
 def watch_json_changes():
     global clients
     while clients > 0:
@@ -85,6 +86,7 @@ def login():
 
 @app.route("/register", methods=['POST'])
 def register():
+
     """
     Função que registra usuário no banco de dados do servidor.
 
@@ -111,6 +113,7 @@ def register():
             return Response(
             "Error: empty value",
             status=400,)
+        
     obj_db ={
         "username":data["username"],
         "password":data["password"],
@@ -124,11 +127,11 @@ def register():
         db = json.load(file)
     
     ###Verifica se o usuário já existe no banco###
-    for data in db:
-        if db[data]["username"] == data["username"]:
-            return Response(
-            "Error: usúario já existe",
-            status=400,)
+    # for data in db:
+    #     if db[data]["username"] == data["username"]:
+    #         return Response(
+    #         "Error: usúario já existe",
+    #         status=400,)
         
     # Cria a chave única para cada usuário
     user_id = generate_unique_id(db.keys())
