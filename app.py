@@ -12,12 +12,6 @@ app = Flask(__name__)
 CORS(app)
 socketio = SocketIO(app, cors_allowed_origins=["http://localhost:5173"])
 watch_thread = None
-obj_db ={
-    "username":"",
-    "password":"",
-    "is_online":False,
-    "public_key":""
-}
 
 clients = 0
 folder_path = os.path.dirname(__file__)
@@ -88,40 +82,61 @@ def login():
             "Error:not exist",
             status=400)
 
+
 @app.route("/register", methods=['POST'])
 def register():
-    """expected format:{
+    """
+    Função que registra usuário no banco de dados do servidor.
+
+    expected format:{
     username:username, password:password, public_key:public_key
     }"""
+
+    # Retira o json da requisição, já o lendo como dict
     data = request.json
     print(data)
 
     data_expected = ["username", "password"]
 
-    for de in data_expected:
-        if de not in data.keys():
+    """ Verifica se foi enviado os campos necessários"""
+    for fields in data_expected:
+        if fields not in data.keys():
             return Response(
             "Error: incorrect format",
             status=400)
     
+    """ Verifica se os campos estão vazios"""
     for key in data.keys():
         if data[key] == "": 
             return Response(
             "Error: empty value",
             status=400,)
+    obj_db ={
+        "username":data["username"],
+        "password":data["password"],
+        "is_online":False,
+        "public_key":data["public_key"]
+    }
     
-    obj_db["is_online"] = True
-    obj_db["username"] = data["username"]
-    obj_db["password"] = data["password"]
-    obj_db["public_key"] = data["public_key"]
 
-
+    ###Abre o arquivo onde fica registrado os usuários###
     with open(path_db, 'r') as file:
         db = json.load(file)
+    
+    ###Verifica se o usuário já existe no banco###
+    for data in db:
+        if db[data]["username"] == data["username"]:
+            return Response(
+            "Error: usúario já existe",
+            status=400,)
+        
+    # Cria a chave única para cada usuário
+    user_id = generate_unique_id(db.keys())
 
-    user_id = generate_unique_id(db.keys()) 
+    # Aqui ele cria o usuário com o id novo no objeto da leitura do arquivo do banco 
     db[user_id] = obj_db
 
+    # Aqui é onde é feito o save no banco 
     with open(path_db, 'w') as file:
         json.dump(db, file, indent=2)
 
@@ -129,11 +144,14 @@ def register():
 
 
 def generate_unique_id(existing_ids):
+    # cria uma chave única, caso a chave já exista na lista
+    # passada
     while True:
         new_id = str(uuid.uuid4())
         if new_id not in existing_ids:
             return new_id
-        
+
+
 @app.route("/logout", methods=['POST'])
 def logout():
     data = request.json
