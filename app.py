@@ -56,6 +56,13 @@ def handle_disconnect():
 @app.route("/login", methods=['POST'])
 def login():
     data_request = request.json
+
+    # Create new pair keys log
+    print("\n" + "---" * 10 + "LOG : Server is receiving the public key because the user logged into their account" + "---" * 10)
+    print("\nUsername: ", data_request["username"])
+    print("\nPublic Key Serializaded:\n\n", data_request["public_key"])
+    print("---" * 70 + "\n\n")
+
     with open(path_db, 'r') as file:
         db = json.load(file)
 
@@ -96,6 +103,11 @@ def register():
 
     # Retira o json da requisição, já o lendo como dict
     data_request = request.json
+
+    print("\n" + "---" * 15 + "LOG : Server is receiving the public key because user create a new account" + "---" * 15)
+    print("\nUsername: ", data_request["username"])
+    print("\nNew Public Key Serializaded:\n\n", data_request["public_key"])
+    print("---" * 40 + "\n\n")
 
     data_expected = ["username", "password"]
 

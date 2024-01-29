@@ -3,7 +3,7 @@
     "username": "users",
     "password": "senha",
     "is_online": true,
-    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAET7CJMY7DOAIKKnz55LD9+187l4vh\nuvIk5ecoPOqbadWLnU7FHASEgBEEFRyL7m8VCHQLfMpvh4CPfz7y5OHL6Q==\n-----END PUBLIC KEY-----\n"
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkPub7Gt0X+JpI1n/HZ19ZV1zOaVE\nNrPauzVLiIQTiYDeJVxVM45FiOlaph0ybMgVR7FSYHbau16UWdNYUldqqQ==\n-----END PUBLIC KEY-----\n"
   },
   "76079d48-0dc1-43cd-9532-484d1417dc17": {
     "username": "user2",
@@ -16,5 +16,17 @@
     "password": "fabior",
     "is_online": true,
     "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEnSl/3V4k2oILIpL6Ho4qL5ejMN+E\n9hhRIQyI8rv6BLV+6XM87lHWnJUBqA8ysZrUs11dv7xfHcv7En7pIXHxjQ==\n-----END PUBLIC KEY-----\n"
+  },
+  "5a9a467b-2edc-4d67-bc0b-d02e48ab2053": {
+    "username": "new_julior",
+    "password": "new_password",
+    "is_online": false,
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEg2iKs9+cOdnWVOvDC8Pp7Us/7iB1\nw8xurLdxfd/MsfS5MGRtZj/HmCohLalbcJbrU+CNQPLJAlYxBEsvPlPaQg==\n-----END PUBLIC KEY-----\n"
+  },
+  "83957217-27ba-4cd5-9d70-4e54f3438326": {
+    "username": "julio123",
+    "password": "senha123",
+    "is_online": false,
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETrB40DbUAl+AYhewpdiFz5zrncwO\n0FbcqCwYFqmdgeW+uryBsgTqocnBpxDrE3Gb5LqVSwRsUjQmJH7GdGsuZA==\n-----END PUBLIC KEY-----\n"
   }
 }
