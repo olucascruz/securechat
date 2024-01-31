@@ -3,13 +3,13 @@
     "username": "users",
     "password": "senha",
     "is_online": true,
-    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkPub7Gt0X+JpI1n/HZ19ZV1zOaVE\nNrPauzVLiIQTiYDeJVxVM45FiOlaph0ybMgVR7FSYHbau16UWdNYUldqqQ==\n-----END PUBLIC KEY-----\n"
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEyjGqyXMgwAFmMDTzjEbHEXTk+ITR\nFxwffQiwvdBmUG5i5RPmVcW/AQzMBjcymaCHeLFCKkeNKvxA3YxtaSzEnA==\n-----END PUBLIC KEY-----\n"
   },
   "76079d48-0dc1-43cd-9532-484d1417dc17": {
     "username": "user2",
     "password": "senha2",
     "is_online": true,
-    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqoHIsjP3Mlu3bccnhiFfTN4QlBad\nvcVmDu4RxTh9c9HE1Kfs+Lw2+qGW2TV+6DUx50jfiE+ku1BHfy1AhucpOg==\n-----END PUBLIC KEY-----\n"
+    "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqWr2EEcwlBdAamCMh2Ll+71nPbdH\nzjwCRfvDFuZ8JeqSzqLxbQ4wDFUfF6KMIPtR89cq8mkSL3WLjPwk62DhDw==\n-----END PUBLIC KEY-----\n"
   },
   "f5ef697e-3c99-440b-bfe7-a6fd76f08e78": {
     "username": "julio",
@@ -28,5 +28,17 @@
     "password": "senha123",
     "is_online": false,
     "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETrB40DbUAl+AYhewpdiFz5zrncwO\n0FbcqCwYFqmdgeW+uryBsgTqocnBpxDrE3Gb5LqVSwRsUjQmJH7GdGsuZA==\n-----END PUBLIC KEY-----\n"
+  },
+  "1b182475-3ec9-45e6-8df2-84df6fa17602": {
+    "username": "olucas",
+    "password": "asenha",
+    "is_online": true,
+    "public_key": "047e23689674659d2204e58ec74a5f47bd7e81153dc4185ff78c969e495de16ff1bfdf7760632338f896de7544102225ea85330b2a3206562704847fcda9074850"
+  },
+  "fe4780cd-d06d-4b67-b857-1b01a16d6cce": {
+    "username": "olucas2",
+    "password": "asenha2",
+    "is_online": true,
+    "public_key": "0467a538b6efaa2379d8f40eaf4fe080a1ebbedc09ef2c89a5a16d3a178f7560d5de4f311404eff0cad74b8f4f71a41ea494ed8814d6ce6cc6dba7a5ac2a9bedfa"
   }
 }

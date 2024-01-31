@@ -183,14 +183,29 @@ def logout():
 def getUsers():
     with open(path_db, 'r') as file:
         db = json.load(file)
-    return db
+    
+    data = []
+    for user in db:
+        data_user = {
+            "username":db[user]["username"],
+            "id":user,
+            "is_online":db[user]["is_online"],
+            "public_key":db[user]["public_key"]
+            }
+        print(user)
+        data.append(data_user)
+    print(data)
+    return data
 
 
 @socketio.on('message')
 def handle_message(data_request):
-    receiver = data_request["receiver"]
     print(data_request)
-    emit(f"message-{receiver}", data_request, broadcast=True)
+    try:
+        receiver = data_request["receiver"]
+        print("data_request",data_request)
+        emit(f"message-{receiver}", data_request, broadcast=True)
+    except Exception as er: print(er)
     # emit(f"teste", data_request, broadcast=True)
 
 @socketio.on('message_test')
