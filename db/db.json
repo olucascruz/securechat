@@ -33,12 +33,12 @@
     "username": "olucas",
     "password": "asenha",
     "is_online": true,
-    "public_key": "047e23689674659d2204e58ec74a5f47bd7e81153dc4185ff78c969e495de16ff1bfdf7760632338f896de7544102225ea85330b2a3206562704847fcda9074850"
+    "public_key": "04cecf3fbcdc76ef46d6023d3ae31fc198237649bfeb2872402c974dd43c86851cb5980b0100b0a588d2b2977b73716979b8ad9f6a6af4b4ef9b59d86bdfd1771a"
   },
   "fe4780cd-d06d-4b67-b857-1b01a16d6cce": {
     "username": "olucas2",
     "password": "asenha2",
     "is_online": true,
-    "public_key": "0467a538b6efaa2379d8f40eaf4fe080a1ebbedc09ef2c89a5a16d3a178f7560d5de4f311404eff0cad74b8f4f71a41ea494ed8814d6ce6cc6dba7a5ac2a9bedfa"
+    "public_key": "041405e2f1549ebaba00942462bb5fadf78635c490ce2d47d175ab982e90b34231dba145201c1d21e18d05cd16c3b4620cc8e246ba0e2d423544366bf4bde7c9ec"
   }
 }

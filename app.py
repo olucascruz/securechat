@@ -16,6 +16,7 @@ watch_thread = None
 clients = 0
 folder_path = os.path.dirname(__file__)
 path_db = os.path.join(folder_path, r"db\db.json")
+path_db_group = os.path.join(folder_path, r"db\group.json")
 path_db_token = os.path.join(folder_path, r"db\auth.json")
 
 def watch_json_changes():
@@ -90,6 +91,47 @@ def login():
             "Error:not exist",
             status=400)
 
+@app.route("/create_group", methods=['POST'])
+def create_group():
+    data_request = request.json
+    if os.path.exists(path_db_group):
+        with open(path_db_group, 'r') as file:
+            db = json.load(file)
+    else:
+        db = {}
+    
+    group_id = generate_unique_id(db)
+    db[group_id] = {
+        "name": data_request["name"],
+        "members_id": data_request["members_id"]
+    }
+
+    with open(path_db_group, 'w') as file:
+        json.dump(db, file, indent=2)
+
+    return jsonify({"created":True})
+
+@app.route("/get_group", methods=['POST'])
+def get_groups():
+    data_request = request.json
+    print(data_request)
+
+    # Verifica se "id" está presente em data_request
+    user_id = data_request.get("id")
+
+    if user_id is None:
+        return jsonify({"error": "ID not provided"}), 400
+
+    with open(path_db_group, 'r') as file:
+        db = json.load(file)
+
+    new_db = {"groups": []}
+    for group in db:
+        if user_id in db[group]["members_id"]:
+            new_db["groups"].append(group)
+
+    return jsonify(new_db)
+
 
 @app.route("/register", methods=['POST'])
 def register():
@@ -125,7 +167,7 @@ def register():
             "Error: empty value",
             status=400,)
         
-    obj_db ={
+    obj_db = {
         "username":data_request["username"],
         "password":data_request["password"],
         "is_online":False,
@@ -192,7 +234,6 @@ def getUsers():
             "is_online":db[user]["is_online"],
             "public_key":db[user]["public_key"]
             }
-        print(user)
         data.append(data_user)
     print(data)
     return data

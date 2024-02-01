@@ -1,0 +1,42 @@
+{
+  "3b6dc4b3-567e-4468-8ad5-ab3a557023ca": {
+    "name": "ogrupobom",
+    "members_id": [
+      "468e663d-397d-413d-a631-98f268f248ba",
+      "76079d48-0dc1-43cd-9532-484d1417dc17",
+      "f5ef697e-3c99-440b-bfe7-a6fd76f08e78"
+    ]
+  },
+  "13e8f0b9-5388-4f5e-adf8-4169108f503f": {
+    "name": "novo",
+    "members_id": [
+      "76079d48-0dc1-43cd-9532-484d1417dc17",
+      "468e663d-397d-413d-a631-98f268f248ba"
+    ]
+  },
+  "3985aa56-4434-48db-ba72-eb0e9ddeb63e": {
+    "name": "eitaGrupoBom",
+    "members_id": [
+      "5a9a467b-2edc-4d67-bc0b-d02e48ab2053",
+      "83957217-27ba-4cd5-9d70-4e54f3438326",
+      "f5ef697e-3c99-440b-bfe7-a6fd76f08e78"
+    ]
+  },
+  "bdfbb519-d49d-4bc2-bbed-3f773e9d721a": {
+    "name": "4pessoas",
+    "members_id": [
+      "fe4780cd-d06d-4b67-b857-1b01a16d6cce",
+      "1b182475-3ec9-45e6-8df2-84df6fa17602",
+      "83957217-27ba-4cd5-9d70-4e54f3438326",
+      "5a9a467b-2edc-4d67-bc0b-d02e48ab2053"
+    ]
+  },
+  "61dfcebb-0050-4008-9856-0b1f8679dd6c": {
+    "name": "3pessoas",
+    "members_id": [
+      "f5ef697e-3c99-440b-bfe7-a6fd76f08e78",
+      "76079d48-0dc1-43cd-9532-484d1417dc17",
+      "468e663d-397d-413d-a631-98f268f248ba"
+    ]
+  }
+}
