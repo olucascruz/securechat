@@ -5,6 +5,7 @@ from flask_cors import CORS
 import json
 import time
 import threading
+from threading import Lock
 import os
 import uuid
 
@@ -19,8 +20,14 @@ path_db = os.path.join(folder_path, r"db\db.json")
 path_db_group = os.path.join(folder_path, r"db\group.json")
 path_db_token = os.path.join(folder_path, r"db\auth.json")
 
+# Adicione um lock para proteger o acesso à variável compartilhada
+clients_lock = Lock()
+clients = 0 
+
 def watch_json_changes():
     global clients
+    global clients_lock
+
     while clients > 0:
         time.sleep(1)
         try:
@@ -29,8 +36,18 @@ def watch_json_changes():
                 print('Arquivo JSON alterado. Notificando clientes.')
                 with open(path_db, "r") as file:
                     db = json.load(file)
-                    socketio.emit('jsonChanged', db, namespace='/')
-                watch_json_changes.last_mtime = mtime
+
+                for user in db:
+                    data = {
+                        "id": user,
+                        "username": db[user]["username"],
+                        "is_online": db[user]["is_online"],
+                        "public_key": db[user]["public_key"]
+                    }
+                    emit(f"dbChanged-{user}", data, broadcast=True)
+
+                with clients_lock:
+                    watch_json_changes.last_mtime = mtime
         except FileNotFoundError:
             pass
 
@@ -42,10 +59,10 @@ def handle_connect():
     global clients
 
     clients += 1
-    if watch_thread is None or not watch_thread.is_alive():
-        print('Iniciando thread de observação...')
-        watch_thread = threading.Thread(target=watch_json_changes, daemon=True)
-        watch_thread.start()
+    # if watch_thread is None or not watch_thread.is_alive():
+    #     print('Iniciando thread de observação...')
+    #     watch_thread = threading.Thread(target=watch_json_changes, daemon=True)
+    #     watch_thread.start()
 
 @socketio.on('disconnect')
 def handle_disconnect():
@@ -63,6 +80,12 @@ def login():
     print("\nUsername: ", data_request["username"])
     print("\nPublic Key Serializaded:\n\n", data_request["public_key"])
     print("---" * 70 + "\n\n")
+    
+
+    if len(data_request["public_key"]) != 130: 
+        print("error lenght public key")
+        return jsonify({"error": "public key dont wrong lenght"}), 400
+
 
     with open(path_db, 'r') as file:
         db = json.load(file)
