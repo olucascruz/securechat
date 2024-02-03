@@ -11,7 +11,7 @@ import uuid
 
 app = Flask(__name__)
 CORS(app)
-socketio = SocketIO(app, cors_allowed_origins=["http://localhost:5173"])
+socketio = SocketIO(app, cors_allowed_origins=["http://localhost:5173"] )
 watch_thread = None
 
 clients = 0
@@ -108,7 +108,7 @@ def login():
             db[id]["public_key"] = data_request["public_key"]
             with open(path_db, 'w') as file:
                 json.dump(db, file, indent=2)
-            print(db_token[db[id]["username"]])
+            print("return login:", db_token[db[id]["username"]])
             return jsonify(db_token[db[id]["username"]])
     return Response(
             "Error:not exist",
