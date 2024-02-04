@@ -261,6 +261,22 @@ def getUsers():
     print(data)
     return data
 
+@app.route("/getPublicKey") 
+def get_public_key():
+    user_id = request.args.get('user_id')
+    with open(path_db, 'r') as file:
+        db = json.load(file)
+    
+    for user in db:
+        if(user_id == user):
+            data_user = {
+                "public_key":db[user]["public_key"]
+                }
+            return data_user
+        
+    return Response(
+            "Error: user_id not exist",
+            status=400,)
 
 @socketio.on('message')
 def handle_message(data_request):

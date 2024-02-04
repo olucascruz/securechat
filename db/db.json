@@ -3,12 +3,12 @@
     "username": "olucas2",
     "password": "asenha2",
     "is_online": true,
-    "public_key": "048318bb6c4f1a44dd365ff4c81a934f70a218c5b3db7775c122085fa5c84a9db4f018fcb6c158bd90059375cb45c1550fc8c08a8b32deb34d95e5f93b1f4aead2"
+    "public_key": "04c8de424a4cc3fa5d39f363be4817874c3d71cea33d40d39529e78ea9696ddceee217cb0b1c092c296f89bcfd6c2103d90ed43a0c0767ce4f90a46249ec86b996"
   },
   "6ba7d68c-7182-459a-8c2c-1074f456bd99": {
     "username": "olucas",
     "password": "asenha",
     "is_online": true,
-    "public_key": "04e3d46e9d1d4dd6773d0c9ab6ca0e51f676adf56a40b615a6404b4479b06e4345cf975102e915e3cde08e66bff9de48b737d2467db8fa1558535f5dc609d2218c"
+    "public_key": "0473d00244724afe05344f78a8e53d8aba9de792f2b8b175ce66acf6d247b76d6a338d7ee27cd29608d7d372005c7241b259788e3da9815100c97e3ceaadd821b0"
   }
 }
