@@ -38,5 +38,24 @@
       "76079d48-0dc1-43cd-9532-484d1417dc17",
       "468e663d-397d-413d-a631-98f268f248ba"
     ]
+  },
+  "bd39a48e-7371-4309-a032-60f68dd56916": {
+    "name": "novoGrupo",
+    "members_id": [
+      "bb62616c-ed3d-405c-a504-b267b6bd25c4",
+      "a67ec214-325d-4058-b38f-4de5eb661de4",
+      "23bf2ffb-ef7a-45c7-bef5-976d970bbc35",
+      "9e3a99f1-4d01-4314-8f8e-c9c72ffa7058"
+    ]
+  },
+  "570a617a-c5f3-4ca0-ac41-a4fb33c632c2": {
+    "name": "grupoCom5Users",
+    "members_id": [
+      "bb62616c-ed3d-405c-a504-b267b6bd25c4",
+      "23bf2ffb-ef7a-45c7-bef5-976d970bbc35",
+      "9e3a99f1-4d01-4314-8f8e-c9c72ffa7058",
+      "6ba7d68c-7182-459a-8c2c-1074f456bd99",
+      "4bced20b-4728-4632-8766-6c2b6e406bc2"
+    ]
   }
 }

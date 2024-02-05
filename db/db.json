@@ -3,12 +3,36 @@
     "username": "olucas2",
     "password": "asenha2",
     "is_online": true,
-    "public_key": "04bc764ec59f004b9f8b5e97f084435f5d9a2be8e28735b8066b950f25393d9d0dd690187f79f5d152b4cb6d0c9f777e81a5d6717d12ccd3b990d0b80d31aa38b9"
+    "public_key": "04b10a8baa1bee157d3fd5ef4e9e27125f76d0b74023aaed577a14cccafe982c12caca0d9c9e57c6bb02b94180fbd7300046b6969342112c4c4c8929acbd9408f5"
   },
   "6ba7d68c-7182-459a-8c2c-1074f456bd99": {
     "username": "olucas",
     "password": "asenha",
     "is_online": true,
     "public_key": "04b039be9ac4b10f22db48aae64c3d243b3abaa9dc88e378caeeba87693beb2a71f0d2129e76d3bcd0635b682d7b7804e644a84efaff13c49d75c9e5e13895071a"
+  },
+  "9e3a99f1-4d01-4314-8f8e-c9c72ffa7058": {
+    "username": "outro",
+    "password": "asenha",
+    "is_online": false,
+    "public_key": "04ab2e34e9a2868c01110f1d38e7502369b3e407b626838949b95b57744227957a14bc71591869040516594029ae62707b1ba8122a2bec79a49c743c47a02cb35a"
+  },
+  "23bf2ffb-ef7a-45c7-bef5-976d970bbc35": {
+    "username": "fulano",
+    "password": "asenha",
+    "is_online": false,
+    "public_key": "0497b5199cad9f05580235279d05b6d54d86896bd30e8de40f4aff2401e1daed171d83ba129475b042c3bf8c8f821e3498f84c4973784ea42cd0b49ff9dd3cc605"
+  },
+  "a67ec214-325d-4058-b38f-4de5eb661de4": {
+    "username": "ciclano",
+    "password": "asenha",
+    "is_online": false,
+    "public_key": "047c8d227985211fe69759f57a0053625dbb26a4eb7cbb896d0a8836ae9dbe5fa0c2501ed3c66ac8f9b38ca4065e0e9c2fc569174b4b6417229f2573ad2f493c57"
+  },
+  "bb62616c-ed3d-405c-a504-b267b6bd25c4": {
+    "username": "opa",
+    "password": "asenha",
+    "is_online": true,
+    "public_key": "0496d1449b8b093d5b5f3b80579631243e7482c17d5eb63c2a7ef2f89332151d1d577c8c63edd0b10a8deb08a197cfdee4737bab03c2d380835c787fd9091187e4"
   }
 }

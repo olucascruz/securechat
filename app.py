@@ -132,7 +132,7 @@ def create_group():
     with open(path_db_group, 'w') as file:
         json.dump(db, file, indent=2)
 
-    return jsonify({"created":True})
+    return jsonify({"created":True}, 200)
 
 @app.route("/get_group", methods=['POST'])
 def get_groups():
@@ -148,12 +148,12 @@ def get_groups():
     with open(path_db_group, 'r') as file:
         db = json.load(file)
 
-    new_db = {"groups": []}
+    groups_includes_user = {}
     for group in db:
         if user_id in db[group]["members_id"]:
-            new_db["groups"].append(group)
+            groups_includes_user[group] = db[group]
 
-    return jsonify(new_db)
+    return jsonify(groups_includes_user)
 
 
 @app.route("/register", methods=['POST'])
