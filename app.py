@@ -77,6 +77,10 @@ def watch_json_changes():
                     # Notificar observers sobre mudanças nos dados
                     json_chages_subject.notify_observers(data)
 
+                    print("\n" +"---" *15 + "LOG NOTIFICAÇÃO: Mudanças no JSON" + "---" *15)
+                    print(f"\nDados notificados para {user}:\n", data)
+                    print("---" *40 + "\n\n")
+
                 with clients_lock:
                     watch_json_changes.last_mtime = mtime
         except FileNotFoundError:
