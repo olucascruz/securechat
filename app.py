@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, Response
 from flask_socketio import SocketIO
 from flask_socketio import send, emit
 from flask_cors import CORS
+from typing import List, Callable
 import json
 import time
 import threading
@@ -24,6 +25,33 @@ path_db_token = os.path.join(folder_path, r"db\auth.json")
 clients_lock = Lock()
 clients = 0 
 
+# Interface dos observers
+class Observer:
+    def update(self, data: dict):
+        pass
+
+# Gerencia os observers e notifica mudanças
+class JsonChangesSubject:
+    def __init__(self):
+        # Listagem dos observers
+        self.observers: List[Observer] = []
+
+    def add_observer(self, observer: Observer):
+        # Add novo observer
+        self.observers.append(observer)
+
+    def remove_observer(self, observer: Observer):
+        # Remove um observer da lista de observers
+        self.observers.remove(observer)
+
+    def notify_observers(self, data: dict):
+        # Notifica todos os observadores sobre mudanças no arquivo JSON
+        for observer in self.observers:
+            observer.update(data)
+
+# Instância para usar no watch_json_changes()
+json_chages_subject = JsonChangesSubject()
+
 def watch_json_changes():
     global clients
     global clients_lock
@@ -45,6 +73,9 @@ def watch_json_changes():
                         "public_key": db[user]["public_key"]
                     }
                     emit(f"dbChanged-{user}", data, broadcast=True)
+
+                    # Notificar observers sobre mudanças nos dados
+                    json_chages_subject.notify_observers(data)
 
                 with clients_lock:
                     watch_json_changes.last_mtime = mtime
