@@ -27,8 +27,10 @@ clients = 0
 
 # Interface dos observers
 class Observer:
+    def __init__(self):
+        self.id=""
     def update(self, data: dict):
-        pass
+        print("alo")
 
 # Gerencia os observers e notifica mudanças
 class JsonChangesSubject:
@@ -94,6 +96,7 @@ def handle_connect():
     global clients
 
     clients += 1
+    
     # if watch_thread is None or not watch_thread.is_alive():
     #     print('Iniciando thread de observação...')
     #     watch_thread = threading.Thread(target=watch_json_changes, daemon=True)
