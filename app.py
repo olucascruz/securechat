@@ -148,12 +148,17 @@ def get_groups():
     with open(path_db_group, 'r') as file:
         db = json.load(file)
 
-    groups_includes_user = {}
+    groups_includes_user = []
     for group in db:
         if user_id in db[group]["members_id"]:
-            groups_includes_user[group] = db[group]
+            data_group = {
+            "name":db[group]["name"],
+            "id":group,
+            "members":db[group]["members_id"],
+            }
+            groups_includes_user.append(data_group)
 
-    return jsonify(groups_includes_user)
+    return groups_includes_user
 
 
 @app.route("/register", methods=['POST'])
@@ -288,10 +293,14 @@ def handle_message(data_request):
     except Exception as er: print(er)
     # emit(f"teste", data_request, broadcast=True)
 
-@socketio.on('message_test')
+@socketio.on('message-group')
 def handle_message(data_request):
     print(data_request)
-    emit(f"teste", data_request, broadcast=True)
+    try:
+        group_id = data_request["groupId"]
+        receiver = data_request["receiver"]
+        emit(f"message-group-{group_id}-{receiver}", data_request, broadcast=True)
+    except Exception as ex: print(ex)
 
 
 if __name__ == "__main__":

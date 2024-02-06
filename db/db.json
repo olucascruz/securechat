@@ -3,13 +3,13 @@
     "username": "olucas2",
     "password": "asenha2",
     "is_online": true,
-    "public_key": "04b10a8baa1bee157d3fd5ef4e9e27125f76d0b74023aaed577a14cccafe982c12caca0d9c9e57c6bb02b94180fbd7300046b6969342112c4c4c8929acbd9408f5"
+    "public_key": "04dacd606d578561ea8c5741f7739ed5ddd4d248771d7f2acd2b265225df1ddc893158f3b0f5dd31b1aa88d81467262a0b066447e3bb19e4590a5c536c2be093ca"
   },
   "6ba7d68c-7182-459a-8c2c-1074f456bd99": {
     "username": "olucas",
     "password": "asenha",
     "is_online": true,
-    "public_key": "04b039be9ac4b10f22db48aae64c3d243b3abaa9dc88e378caeeba87693beb2a71f0d2129e76d3bcd0635b682d7b7804e644a84efaff13c49d75c9e5e13895071a"
+    "public_key": "04c22b6ccaf6177384bb09c7eeac35bbc1295226a7a0b96d19aa6bb6d38b1adfab286b5db0bf43f4100329fb34131ec2f6b196d17fb62c21be63c392b435d69a6c"
   },
   "9e3a99f1-4d01-4314-8f8e-c9c72ffa7058": {
     "username": "outro",
@@ -33,6 +33,6 @@
     "username": "opa",
     "password": "asenha",
     "is_online": true,
-    "public_key": "0496d1449b8b093d5b5f3b80579631243e7482c17d5eb63c2a7ef2f89332151d1d577c8c63edd0b10a8deb08a197cfdee4737bab03c2d380835c787fd9091187e4"
+    "public_key": "0415be4f50ecf2148d5061f210d77b91a581fead4aee110ab6eff090c2ce85182ec841aae0beca41e12ba5b8dd685cb3a3bef6fac8100a1c1db2222cce823d8b4b"
   }
 }
