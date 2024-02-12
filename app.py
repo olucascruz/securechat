@@ -109,6 +109,7 @@ def login():
             with open(path_db, 'w') as file:
                 json.dump(db, file, indent=2)
             print("return login:", db_token[db[id]["username"]])
+            socketio.emit("new_user_connected", "update")
             return jsonify(db_token[db[id]["username"]])
     return Response(
             "Error:not exist",
@@ -217,7 +218,7 @@ def register():
     # Cria a chave única para cada usuário
     user_id = generate_unique_id(db.keys())
 
-    # Aqui ele cria o usuário com o id novo no objeto da leitura do arquivo do banco 
+    # criar o usuário com o id novo no objeto da leitura do arquivo do banco 
     db[user_id] = obj_db
 
     # Aqui é onde é feito o save no banco 
@@ -239,6 +240,7 @@ def generate_unique_id(existing_ids):
 @app.route("/logout", methods=['POST'])
 def logout():
     data_request = request.json
+    print(data_request)
     with open(path_db, 'r') as file:
         db = json.load(file)
 
@@ -247,6 +249,7 @@ def logout():
             db[id]["is_online"] = False
             with open(path_db, 'w') as file:
                 json.dump(db, file, indent=2)
+            socketio.emit("new_user_connected", "update")
             return jsonify({"msg":"logout"})
 
 @app.route("/users")      
@@ -257,10 +260,11 @@ def getUsers():
     data = []
     for user in db:
         data_user = {
+            
             "username":db[user]["username"],
             "id":user,
             "is_online":db[user]["is_online"],
-            "public_key":db[user]["public_key"]
+            
             }
         data.append(data_user)
     print(data)
@@ -283,9 +287,27 @@ def get_public_key():
             "Error: user_id not exist",
             status=400,)
 
+@app.route("/getIsOnline") 
+def get_is_online():
+    user_id = request.args.get('user_id')
+    with open(path_db, 'r') as file:
+        db = json.load(file)
+    
+    for user in db:
+        if(user_id == user):
+            data_user = {
+                "is_online":db[user]["is_online"]
+                }   
+            return data_user
+        
+    return Response(
+            "Error: user_id not exist",
+            status=400,)
+
+
 @socketio.on('message')
 def handle_message(data_request):
-    print(data_request)
+    print("message event - ",data_request)
     try:
         receiver = data_request["receiver"]
         print("data_request",data_request)
@@ -295,7 +317,7 @@ def handle_message(data_request):
 
 @socketio.on('message-group')
 def handle_message(data_request):
-    print(data_request)
+    print("message group event - ",data_request)
     try:
         group_id = data_request["groupId"]
         receiver = data_request["receiver"]
@@ -305,12 +327,3 @@ def handle_message(data_request):
 
 if __name__ == "__main__":
     socketio.run(app,  debug=True)
-
-
-@app.route("/test", methods=["GET", "POST"])
-def test():
-    if request.method == "POST":
-        print(request.json)
-        return jsonify({"test":0})
-    print("test")
-    return jsonify({"test":0})
