@@ -2,38 +2,38 @@
   "4bced20b-4728-4632-8766-6c2b6e406bc2": {
     "username": "olucas2",
     "password": "asenha2",
-    "is_online": true,
-    "public_key": "041a09e12e8df33d07cca62d7042f2339aca2837fc4e7da084a7b1ac90e8a53820ae5fc39aaffc861d38ea718d0489dd4b9a2b1d97416375e9394c8f387eea4732"
+    "is_online": false,
+    "public_key": ""
   },
   "6ba7d68c-7182-459a-8c2c-1074f456bd99": {
     "username": "olucas",
     "password": "asenha",
-    "is_online": true,
-    "public_key": "041c96e3ffe021d972863764f6ecf9ce4fa1199d1d54330c17f95df54f3ce435af29f6c5d6179132260d9fca72c28f48df6ef8ba81e4f94e88f5df82d8af9c744b"
+    "is_online": false,
+    "public_key": ""
   },
   "9e3a99f1-4d01-4314-8f8e-c9c72ffa7058": {
     "username": "outro",
     "password": "asenha",
     "is_online": false,
-    "public_key": "04ab2e34e9a2868c01110f1d38e7502369b3e407b626838949b95b57744227957a14bc71591869040516594029ae62707b1ba8122a2bec79a49c743c47a02cb35a"
+    "public_key": ""
   },
   "23bf2ffb-ef7a-45c7-bef5-976d970bbc35": {
     "username": "fulano",
     "password": "asenha",
     "is_online": false,
-    "public_key": "0497b5199cad9f05580235279d05b6d54d86896bd30e8de40f4aff2401e1daed171d83ba129475b042c3bf8c8f821e3498f84c4973784ea42cd0b49ff9dd3cc605"
+    "public_key": ""
   },
   "a67ec214-325d-4058-b38f-4de5eb661de4": {
     "username": "ciclano",
     "password": "asenha",
     "is_online": false,
-    "public_key": "047c8d227985211fe69759f57a0053625dbb26a4eb7cbb896d0a8836ae9dbe5fa0c2501ed3c66ac8f9b38ca4065e0e9c2fc569174b4b6417229f2573ad2f493c57"
+    "public_key": ""
   },
   "bb62616c-ed3d-405c-a504-b267b6bd25c4": {
     "username": "opa",
     "password": "asenha",
     "is_online": true,
-    "public_key": "04df8c14dc604138939d059e75c7975a820161837f6b7c37aaefab455a633cd2923055f72f737e5a88727b95dfaacfeaca34ba9ee0b31ddde4b12380abb1319f66"
+    "public_key": "046f696ad20643df11b50d0964c12c8ac50d84f98d8a343a8ed4b9f14e4659051efa4de316efb79f228baba023f95834c31d81d1ba33de4581a191c2d9051d7874"
   },
   "38826132-0769-4e9c-b234-63ac2c766305": {
     "username": "jhin",
