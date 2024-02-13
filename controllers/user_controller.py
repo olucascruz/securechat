@@ -54,11 +54,12 @@ def register_controller(data_register):
 
 
 def logout_controller(data_request:dict):
-    id = data_request.values()
+    id = data_request["id"]
     try:
         update_user(id, new_public_key="", is_online=False)
         return jsonify({'logout':'successful'}), 200
     except Exception as ex:
+        print("logouttt", ex)
         return error("error logout")
 
 

@@ -60,7 +60,6 @@ def update_user(id, new_public_key='', is_online=False):
     users[id]['public_key'] = str(new_public_key)
     users[id]['is_online'] = is_online
 
-    if not new_public_key and not is_online: return False
     
     with open(path_db_users, 'w') as file:
         json.dump(users, file, indent=2)
