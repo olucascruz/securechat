@@ -9,7 +9,7 @@
     "username": "olucas",
     "password": "asenha",
     "is_online": true,
-    "public_key": "041dfa383e8e2867c482e7317daa9576e00f205142e1536a50bc4bb60f824ff4c11c989f0fc7ee4f7548a3120d3cab261475b7709137ce896c6008a72e9f2fd375"
+    "public_key": "041c96e3ffe021d972863764f6ecf9ce4fa1199d1d54330c17f95df54f3ce435af29f6c5d6179132260d9fca72c28f48df6ef8ba81e4f94e88f5df82d8af9c744b"
   },
   "9e3a99f1-4d01-4314-8f8e-c9c72ffa7058": {
     "username": "outro",
@@ -34,5 +34,11 @@
     "password": "asenha",
     "is_online": true,
     "public_key": "04df8c14dc604138939d059e75c7975a820161837f6b7c37aaefab455a633cd2923055f72f737e5a88727b95dfaacfeaca34ba9ee0b31ddde4b12380abb1319f66"
+  },
+  "38826132-0769-4e9c-b234-63ac2c766305": {
+    "username": "jhin",
+    "password": "asenha",
+    "is_online": false,
+    "public_key": ""
   }
 }
