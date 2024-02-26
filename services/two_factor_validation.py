@@ -44,9 +44,9 @@ def generate_secret_code():
     return code
 
 # Exemplo de uso
-secret_code = generate_secret_code()
+'''secret_code = generate_secret_code()
 message_body = f'Insira este código de 6 dígitos para confirmar que é você.\n{secret_code}\nSe você não solicitou este código nas configurações, ignore esta mensagem'
 
 send_email('recipient_email@example.com', 
            'Assunto do E-mail', 
-           secret_code)
+           secret_code)'''
