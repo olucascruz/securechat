@@ -7,7 +7,7 @@ Projeto acadêmico  criado  para disciplina de segurança da informação.
 Objetivo: Desenvolver um chat seguro usa criptografia ao enviar as mensagens
 
 Como executar:
-- npm install -r requirements.txt
+- pip install -r requirements.txt
 - python app.py
 
 Tecnologias usadas:
