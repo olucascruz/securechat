@@ -10,7 +10,7 @@ CORS(app)
 socket_io:SocketIO = SocketIO(app, cors_allowed_origins=["http://localhost:5173"] )
 watch_thread = None
 
-clients = 0 
+clients = 0
 
 @socket_io.on('connect')
 def handle_connect():

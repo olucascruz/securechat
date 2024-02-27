@@ -2,7 +2,7 @@ import smtplib
 from email.message import EmailMessage
 import random
 
-def send_email(recipient, subject, body, sender='julio.cesar.developer.2019@gmail.com', sender_password='qwpb ousn wsyr slww', smtp_server='smtp.gmail.com', smtp_port=587) -> bool:
+def send_email(recipient, subject, body, sender='email.sender.t2024@gmail.com', sender_password='pqji lvha ckvo fehu', smtp_server='smtp.gmail.com', smtp_port=587) -> bool:
     """
     Sends a standard email from a sender to a recipient.
 
