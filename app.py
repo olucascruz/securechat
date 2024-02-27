@@ -3,11 +3,11 @@ from flask_socketio import SocketIO, send, emit
 from flask_cors import CORS
 from logs import login_log, register_log
 from controllers import auth_login, register_controller, get_users_controller, get_public_key_controller, get_is_online_controller, logout_controller, get_groups_with_user_included_controller, create_group_controller
-
+import random
 
 app = Flask(__name__)
-CORS(app)
-socket_io:SocketIO = SocketIO(app, cors_allowed_origins=["http://localhost:5173"] )
+CORS(app, origins="*")
+socket_io:SocketIO = SocketIO(app, cors_allowed_origins=["https://localhost:5173", "*"] )
 watch_thread = None
 
 clients = 0 
@@ -45,12 +45,13 @@ def register():
     return response
 
 
+
 @app.route("/login", methods=['POST'])
 def login():
     data_request = request.json
-  
+    
     auth = auth_login(data_request)
-    if auth:
+    if auth[1] == 200:
         login_log(data_request)
         socket_io.emit("new_user_connected", "update")
     
@@ -122,4 +123,4 @@ def handle_message(data_request):
 
 
 if __name__ == "__main__":
-    socket_io.run(app,  debug=True)
+    socket_io.run(app,  debug=True, ssl_context=('cert.pem', 'key.pem'))

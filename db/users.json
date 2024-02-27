@@ -8,8 +8,8 @@
   "6ba7d68c-7182-459a-8c2c-1074f456bd99": {
     "username": "olucas",
     "password": "asenha",
-    "is_online": false,
-    "public_key": ""
+    "is_online": true,
+    "public_key": "04521a9aac8afbb2f6b0a8fb26035b234f41e764614513d3c44a8d9af064a638b6db5226c7b66078828466c7efa0d1602a75888a05788826199c3ba03e13414bbd"
   },
   "9e3a99f1-4d01-4314-8f8e-c9c72ffa7058": {
     "username": "outro",
@@ -32,8 +32,8 @@
   "bb62616c-ed3d-405c-a504-b267b6bd25c4": {
     "username": "opa",
     "password": "asenha",
-    "is_online": true,
-    "public_key": "046f696ad20643df11b50d0964c12c8ac50d84f98d8a343a8ed4b9f14e4659051efa4de316efb79f228baba023f95834c31d81d1ba33de4581a191c2d9051d7874"
+    "is_online": false,
+    "public_key": ""
   },
   "38826132-0769-4e9c-b234-63ac2c766305": {
     "username": "jhin",
