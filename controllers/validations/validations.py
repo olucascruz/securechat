@@ -5,9 +5,8 @@ def check_fields(fields_expected:list,
             return False 
     return True
 
-
 def login_validate(request_data_login):
-    fields_expected = ["username", "password", "public_key"]
+    fields_expected = ["username", "password", "public_key", "auth_key"]
     has_expected_fields = check_fields(fields_expected, request_data_login)
     if not has_expected_fields: return False
     return True

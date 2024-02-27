@@ -52,8 +52,6 @@ def insert_user(username:str, password:str) -> bool:
 
     return True
 
-    
-
 def update_user(id, new_public_key='', is_online=False):
     users = get_users()
 
@@ -81,7 +79,6 @@ def get_is_online_by_id(id:str) -> bool:
     if "is_online" in user:
         is_online = user["is_online"]
         return is_online
-        
 
 
 def get_user_by_id(id:str) -> dict:

@@ -1,6 +1,7 @@
 from repositories import update_user, auth_user, insert_user, get_auth, update_auth, get_auth_by_username, get_users_without_password, get_public_key_by_id, get_is_online_by_id
 from utils import generate_unique_id
 from .validations.validations import login_validate, register_validate
+from services.two_factor_validation import generate_secret_code, send_email
 from flask import jsonify
 
 def error(message):
@@ -18,6 +19,7 @@ def auth_login(data_login):
         return error('error length public key')
 
     new_token = generate_unique_id()
+    secrect_code = generate_secret_code()
     auth = {}
     try:    
         user_id = auth_user(username, password) 
